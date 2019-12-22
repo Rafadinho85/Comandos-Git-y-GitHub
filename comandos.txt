@@ -1,0 +1,56 @@
+comandos 
+
+git add :agrega archivo
+git add . agrega todos los archivos de la carpeta
+git commit -m :agrega un mensaje al commit
+git log historia.txt nos permite ver la historia del proyecto
+
+--------analizar cambios en los archivos de tu proyecto git------------
+git show nombre.txt
+git diff me permite mediante los commit comparar dos versiones de mi proyecto
+
+ Para editar un archivo en Vim:
+
+Presionar la tecla I para **entrar ** al modo INSERTAR
+Presionar **Esc ** para **salir ** del modo INSERTAR
+Escribir :w para **guardar ** los cambios
+Escribir :q para **salir ** de Vim
+Se pueden omitir los pasos 3 y 4 escribiendo en su lugar :x que lo que hace es guardar y cerrar en un solo paso.w:
+
+--------volver en el tiempo en nuestro repositorio utilizando branches y checkout-----------
+
+git reset commit nos permite regresar a una version anterior
+git reset commit --hard vuelve todo a un estado anterior(mas peligroso y mas usado) eliminando los commits que habias hecho
+git reset commit --soft pero lo que tengamos en stagin (memoria ram)sigue alli
+git log --stat podemos ver los cambios especificos en un archivo
+git checkout commit archivo.txt: me lleva a un determinado momento en el tiempo
+git checkout master archivo.txt: me trae de nuevo a la ultima version que estoy trabajando
+
+-----------Ramas o branches de git---------------
+git commit -a: me permite hacer un add y un commit al mismo tiempo
+git commit -am "mensaje": me permite hacer un add y commit al mismo tiemmpo
+git branch nombreRama : me permite crear una nueva Rama
+git checkout nombreRama : me permite moverme entre Ramas
+-----------fusión de ramas con git merge-----------------
+#crear un nuevo commit en la rama master combinando los cambios de la rama cabecera
+git checkout master
+git merge cabecera
+#crea un nuevo commit en la rama cabecera combinando los cambios de cualquier otra rama
+git checkout cabecera
+git merge cualquier-otra-rama
+
+#mensaje: invoco a los dioses del desarrollo 
+
+------------solucion de conflictos al hacer un merge----------------
+
+
+------------Uso de GitHub---------------
+//agregar un origen remoto de nuestros archivos
+git remote add origin https://github.com/Rafadinho85/hyperblog.git
+//mostrar que tenemos un origen
+git remote
+git remote -v //nos muestra las opciones que tenemos para enviar o traer cambios
+git push origin master// le indicamos a git que envie la rama master
+git pull origin master// traernos nuestro master desde github y merge con nuestro rama local 
+git pull origin master --allow-unrelated-histories// nos permite hacer un merge
+git config -l//muestra las configuraciones que tengo
