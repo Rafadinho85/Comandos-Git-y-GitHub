@@ -51,6 +51,8 @@ git remote add origin https://github.com/Rafadinho85/hyperblog.git
 git remote
 git remote -v //nos muestra las opciones que tenemos para enviar o traer cambios
 git push origin master// le indicamos a git que envie la rama master
+git push --all //envia el contenido de todas las ramas
+git push origin --tags//envia todas las tags de nuestra repositorio local a github
 git pull origin master// traernos nuestro master desde github y merge con nuestro rama local 
 git pull origin master --allow-unrelated-histories// nos permite hacer un merge
 git config -l//muestra las configuraciones que tengo
